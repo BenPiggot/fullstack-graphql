@@ -17,6 +17,7 @@ module.exports = {
   },
   Mutation: {
     addPet(_, { input }, { models, user }) {
+      console.log(input)
       const pet = models.Pet.create({ ...input, user: user.id })
       return pet
     }

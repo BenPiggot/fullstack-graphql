@@ -5,14 +5,6 @@
   },
   "pet": [
     {
-      "id": 12312412,
-      "type": "dog",
-      "name": "fido",
-      "owner": "ben",
-      "img": "dafda",
-      "createdAt": 234543534
-    },
-    {
       "id": "5KUQoH64g0cTpwUvtSBBK",
       "createdAt": 1609396026250,
       "name": "doug",
@@ -23,6 +15,62 @@
       "id": "wIy-ZStFh1GZl5URLmFmh",
       "createdAt": 1609396043601,
       "name": "Harley",
+      "type": "DOG",
+      "user": "jBWMVGjm50l6LGwepDoty"
+    },
+    {
+      "id": "ZYXVl_39TXNIRpEwLsfwp",
+      "createdAt": 1609455009331,
+      "name": "Mars",
+      "type": "CAT",
+      "user": "jBWMVGjm50l6LGwepDoty"
+    },
+    {
+      "id": "rCtauJdZRsbs_JnCxMpGr",
+      "createdAt": 1609456421122,
+      "name": "Snickers",
+      "type": "CAT",
+      "user": "jBWMVGjm50l6LGwepDoty"
+    },
+    {
+      "id": "prM4-cQL_DLib_qiQ1-sd",
+      "createdAt": 1609456489379,
+      "name": "Charlie",
+      "type": "DOG",
+      "user": "jBWMVGjm50l6LGwepDoty"
+    },
+    {
+      "id": "y9zruQ7v25ghtWV5Ag623",
+      "createdAt": 1609456925565,
+      "name": "Buster",
+      "type": "DOG",
+      "user": "jBWMVGjm50l6LGwepDoty"
+    },
+    {
+      "id": "C6Tvi66WmF2tD1Ty6xcIZ",
+      "createdAt": 1609457794617,
+      "name": "Fido",
+      "type": "DOG",
+      "user": "jBWMVGjm50l6LGwepDoty"
+    },
+    {
+      "id": "Aid5pKJuRgyk7vPKoAfpV",
+      "createdAt": 1609457836851,
+      "name": "Fido",
+      "type": "DOG",
+      "user": "jBWMVGjm50l6LGwepDoty"
+    },
+    {
+      "id": "x3i_Ij3GUBR0XXVFK-7ej",
+      "createdAt": 1609457894504,
+      "name": "Harley",
+      "type": "DOG",
+      "user": "jBWMVGjm50l6LGwepDoty"
+    },
+    {
+      "id": "eKndQoon5v-Rn-TdUHGbw",
+      "createdAt": 1609457907992,
+      "name": "fasdfawe",
       "type": "DOG",
       "user": "jBWMVGjm50l6LGwepDoty"
     }

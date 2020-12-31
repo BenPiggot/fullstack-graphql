@@ -5,25 +5,60 @@ import NewPet from '../components/NewPet'
 import { useMutation, useQuery } from '@apollo/react-hooks'
 import Loader from '../components/Loader'
 
+const PETS_FIELDS = gql`
+  fragment PetsFields on Pet {
+    name
+    id
+    img
+    type
+    vaccinated @client
+    owner {
+      id
+      age @client
+    } 
+  }
+`
+
 const ALL_PETS = gql`
   query AllPets {
     pets {
-      name
-      id
-      img
+      ...PetsFields
     }
   }
+  ${PETS_FIELDS}
+`
+
+const ADD_PET = gql`
+  mutation AddPet($newPet: NewPetInput!) {
+    addPet(input: $newPet) {
+      ...PetsFields
+    }
+  }
+  ${PETS_FIELDS}
 `
 
 export default function Pets () {
   const [modal, setModal] = useState(false)
   const {data, loading, error } = useQuery(ALL_PETS)
+  const [addPetMutation, _ ] = useMutation(ADD_PET, {
+    update(cache, { data: { addPet }} ) {
+      const { pets } = cache.readQuery({ query: ALL_PETS })
+      cache.writeQuery({
+        query: ALL_PETS,
+        data: { pets: pets.concat([addPet])}
+      })
+    }
+  })
   
   
   const onSubmit = input => {
+    addPetMutation({ 
+      variables: { newPet: input }
+    })
     setModal(false)
   }
 
+  console.log(error)
   const petsList = data && data.pets.map(pet => (
     <div className="col-xs-12 col-md-4 col" key={pet.id}>
       <div className="box">
