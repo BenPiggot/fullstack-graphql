@@ -3,5 +3,14 @@
     "id": "jBWMVGjm50l6LGwepDoty",
     "username": "frontendmaster"
   },
-  "pet": []
+  "pet": [
+    {
+      "id": 12312412,
+      "type": "dog",
+      "name": "fido",
+      "owner": "ben",
+      "img": "dafda",
+      "createdAt": 234543534
+    }
+  ]
 }

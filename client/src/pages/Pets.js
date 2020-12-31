@@ -2,17 +2,29 @@ import React, {useState} from 'react'
 import gql from 'graphql-tag'
 import PetBox from '../components/PetBox'
 import NewPet from '../components/NewPet'
-import { useQuery, useMutation } from '@apollo/react-hooks'
+import { useMutation, useQuery } from '@apollo/react-hooks'
 import Loader from '../components/Loader'
+
+const ALL_PETS = gql`
+  query AllPets {
+    pets {
+      name
+      id
+      img
+    }
+  }
+`
 
 export default function Pets () {
   const [modal, setModal] = useState(false)
+  const {data, loading, error } = useQuery(ALL_PETS)
+  
   
   const onSubmit = input => {
     setModal(false)
   }
 
-  const petsList = pets.data.pets.map(pet => (
+  const petsList = data && data.pets.map(pet => (
     <div className="col-xs-12 col-md-4 col" key={pet.id}>
       <div className="box">
         <PetBox pet={pet} />
@@ -45,7 +57,7 @@ export default function Pets () {
       </section>
       <section>
         <div className="row">
-          {petsList}
+          {loading ? <Loader /> : petsList}
         </div>
       </section>
     </div>
